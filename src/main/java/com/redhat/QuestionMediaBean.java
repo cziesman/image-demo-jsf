@@ -14,13 +14,13 @@ import javax.imageio.ImageIO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DisplayImageBean {
+public class QuestionMediaBean {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DisplayImageBean.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QuestionMediaBean.class);
 
     private final List<UploadedImage> images = new ArrayList<>();
 
-    public DisplayImageBean() {
+    public QuestionMediaBean() {
 
         System.setProperty("java.awt.headless", "true");
 
@@ -46,13 +46,13 @@ public class DisplayImageBean {
         image.getGraphics().drawImage(scaled, 0, 0, null);
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ImageIO.write(image, "png", out);
+        ImageIO.write(image, "jpeg", out);
 
         byte[] bytes = out.toByteArray();
         String encoded = Base64.getEncoder().encodeToString(bytes);
         encoded = encoded.replace(System.lineSeparator(), "");
 
-        return "data:image/png;base64," + encoded;
+        return "data:image/jpeg;base64," + encoded;
     }
 
     /*
@@ -65,8 +65,8 @@ public class DisplayImageBean {
                 UploadedImage uploadedImage = new UploadedImage();
 
                 uploadedImage.setIndex(index);
-                uploadedImage.setName("img" + index + ".png");
-                uploadedImage.setImage(ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("images/img.png"))));
+                uploadedImage.setName("img" + index + ".jpg");
+                uploadedImage.setImage(ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("images/img.jpg"))));
 
                 images.add(uploadedImage);
             } catch (IOException e) {

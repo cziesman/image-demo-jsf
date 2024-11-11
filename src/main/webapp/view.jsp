@@ -12,7 +12,7 @@
 <body>
 <f:view>
     <h:form>
-        <h:dataTable id="table" value="#{displayImageBean.images}" var="curr">
+        <h:dataTable id="table" value="#{questionMediaBean.images}" var="curr">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Index"/>
@@ -29,7 +29,7 @@
                 <f:facet name="header">
                     <h:outputText value="Image"/>
                 </f:facet>
-                <h:graphicImage value="#{displayImageBean.encodedImage(curr.index)}"/>
+                <h:graphicImage value="#{questionMediaBean.encodedImage(curr.index)}"/>
             </h:column>
         </h:dataTable>
     </h:form>

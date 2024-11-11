@@ -15,6 +15,6 @@
 #### with 
 
     <h:graphicImage 
-        value="#{displayImageBean.encodedImage(curr.index)}"
+        value="#{questionMediaBean.encodedImage(curr.index)}"
         styleClass="thinDarkBorder" />
 

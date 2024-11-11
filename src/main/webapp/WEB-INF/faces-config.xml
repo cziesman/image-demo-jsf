@@ -4,8 +4,8 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
 
     <managed-bean>
-        <managed-bean-name>displayImageBean</managed-bean-name>
-        <managed-bean-class>com.redhat.DisplayImageBean</managed-bean-class>
+        <managed-bean-name>questionMediaBean</managed-bean-name>
+        <managed-bean-class>com.redhat.QuestionMediaBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
